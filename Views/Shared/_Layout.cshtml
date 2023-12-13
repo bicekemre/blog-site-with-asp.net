@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    Furkan Duran
+  </title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="src/img/favicon.png" />
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+  @Styles.Render("~/Views/Shared/src/app/css/uikit-custom.min.css")
+  @Styles.Render("~/Views/Shared/src/app/css/app.css")
+   <!-- <link rel="stylesheet" href="src/app/css/uikit-custom.min.css" />
+  <link rel="stylesheet" href="src/app/css/app.css" />-->
+</head>
+
+<body id="body-app" class="yb-dark-skin uk-light">
+
+  @RenderBody()
+  
+
+  <!-- main footer -->
+  <footer class="yb-main-footer-wrapper">
+    <div class="waveHorizontals">
+      <div id="waveHorizontal1" class="waveHorizontal" data-uk-img data-src="src/img/bg/wave1.svg"></div>
+      <div id="waveHorizontal2" class="waveHorizontal" data-uk-img data-src="src/img/bg/wave2.svg"></div>
+      <div id="waveHorizontal3" class="waveHorizontal" data-uk-img data-src="src/img/bg/wave3.svg"></div>
+    </div>
+    <a href="#body-app" class="uk-visible@s yb-totop yb-inner-link" data-uk-totop></a>
+    <div class="yb-main-footer">
+      <div class="uk-container">
+        <div data-uk-grid class="uk-child-width-1-2@s">
+          <div class="uk-margin-remove uk-text-left@s">
+            &copy; 2019 Freda, by YobiThemes.
+          </div>
+          <div class="uk-margin-remove uk-text-right@s">
+            <div class="yb-footer-social">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- end main footer -->
+
+  <!-- js -->
+  
+  @Scripts.Render("~/Views/Shared/src/app/js/plugins.min.js")
+  @Scripts.Render("~/Views/Shared/src/app/js/app.js")
+  <!-- <script src="src/app/js/plugins.min.js"></script>
+  <script src="src/app/js/app.js"></script>-->
+</body>
+
+</html>

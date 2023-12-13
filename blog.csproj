@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')"/>
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{54D55110-5416-4C28-A7E5-4BE4930B4481}</ProjectGuid>
+        <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>blog</RootNamespace>
+        <AssemblyName>blog</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <MvcBuildViews>false</MvcBuildViews>
+        <UseIISExpress>true</UseIISExpress>
+        <Use64BitIISExpress/>
+        <IISExpressSSLPort/>
+        <IISExpressAnonymousAuthentication/>
+        <IISExpressWindowsAuthentication/>
+        <IISExpressUseClassicPipelineMode/>
+        <UseGlobalApplicationHostFile/>
+        <NuGetPackageImportStamp/>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.CSharp"/>
+        <Reference Include="System"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Drawing"/>
+        <Reference Include="System.Web.DynamicData"/>
+        <Reference Include="System.Web.ApplicationServices"/>
+        <Reference Include="System.ComponentModel.DataAnnotations"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data.DataSetExtensions"/>
+        <Reference Include="System.Xml.Linq"/>
+        <Reference Include="System.Web"/>
+        <Reference Include="System.Web.Extensions"/>
+        <Reference Include="System.Web.Abstractions"/>
+        <Reference Include="System.Web.Routing"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="System.Configuration"/>
+        <Reference Include="System.Web.Services"/>
+        <Reference Include="System.EnterpriseServices"/>
+        <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <Private>True</Private>
+            <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Http">
+        </Reference>
+        <Reference Include="System.Net.Http.WebRequest">
+        </Reference>
+        <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <Private>True</Private>
+            <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <Private>True</Private>
+            <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.Optimization">
+            <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <Private>True</Private>
+            <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <Private>True</Private>
+            <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <Private>True</Private>
+            <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <Private>True</Private>
+            <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="WebGrease">
+            <Private>True</Private>
+            <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+        </Reference>
+        <Reference Include="Antlr3.Runtime">
+            <Private>True</Private>
+            <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+            <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="App_Start\BundleConfig.cs"/>
+        <Compile Include="App_Start\FilterConfig.cs"/>
+        <Compile Include="App_Start\RouteConfig.cs"/>
+        <Compile Include="Controllers\HomeController.cs"/>
+        <Compile Include="Controllers\LoginController.cs" />
+        <Compile Include="Global.asax.cs">
+            <DependentUpon>Global.asax</DependentUpon>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="Content\bootstrap-theme.css"/>
+        <Content Include="Content\bootstrap-theme.min.css"/>
+        <Content Include="Content\bootstrap.css"/>
+        <Content Include="Content\bootstrap.min.css"/>
+        <Content Include="dist\dark-blog-list.html" />
+        <Content Include="dist\dark-blog-single.html" />
+        <Content Include="dist\dark-index.html" />
+        <Content Include="dist\dark-slide-index.html" />
+        <Content Include="dist\dark-video-index.html" />
+        <Content Include="dist\documentation\index.html" />
+        <Content Include="dist\gulpfile.js" />
+        <Content Include="dist\index.html" />
+        <Content Include="dist\light-blog-list.html" />
+        <Content Include="dist\light-blog-single.html" />
+        <Content Include="dist\light-index.html" />
+        <Content Include="dist\light-slide-index.html" />
+        <Content Include="dist\light-video-index.html" />
+        <Content Include="dist\package.json" />
+        <Content Include="dist\project\project-details-01.html" />
+        <Content Include="dist\project\project-details-02.html" />
+        <Content Include="dist\project\project-details-03.html" />
+        <Content Include="dist\project\project-details-04.html" />
+        <Content Include="dist\project\project-details-05.html" />
+        <Content Include="dist\project\project-details-06.html" />
+        <Content Include="dist\project\project-details-07.html" />
+        <Content Include="dist\project\project-details-08.html" />
+        <Content Include="dist\project\project-details-09.html" />
+        <Content Include="dist\project\project-details-10.html" />
+        <Content Include="dist\src\.DS_Store" />
+        <Content Include="dist\src\app\css\app.css" />
+        <Content Include="dist\src\app\css\app.min.css" />
+        <Content Include="dist\src\app\css\doc.css" />
+        <Content Include="dist\src\app\css\doc.min.css" />
+        <Content Include="dist\src\app\css\uikit-custom.css" />
+        <Content Include="dist\src\app\css\uikit-custom.min.css" />
+        <Content Include="dist\src\app\js\app.js" />
+        <Content Include="dist\src\app\js\plugins.min.js" />
+        <Content Include="dist\src\app\scss\app.scss" />
+        <Content Include="dist\src\app\scss\doc.scss" />
+        <Content Include="dist\src\app\scss\src\_body.scss" />
+        <Content Include="dist\src\app\scss\src\_component.scss" />
+        <Content Include="dist\src\app\scss\src\_landing.scss" />
+        <Content Include="dist\src\app\scss\src\_main_content.scss" />
+        <Content Include="dist\src\app\scss\src\_main_footer.scss" />
+        <Content Include="dist\src\app\scss\src\_main_menu.scss" />
+        <Content Include="dist\src\app\scss\src\_page_loader.scss" />
+        <Content Include="dist\src\app\scss\src\_section_about.scss" />
+        <Content Include="dist\src\app\scss\src\_section_blog.scss" />
+        <Content Include="dist\src\app\scss\src\_section_contact.scss" />
+        <Content Include="dist\src\app\scss\src\_section_home.scss" />
+        <Content Include="dist\src\app\scss\src\_section_portfolio.scss" />
+        <Content Include="dist\src\app\scss\src\_section_resume.scss" />
+        <Content Include="dist\src\app\scss\uikit-custom.scss" />
+        <Content Include="dist\src\app\scss\_vars.scss" />
+        <Content Include="dist\src\html-master\.DS_Store" />
+        <Content Include="dist\src\html-master\html-page\dark-blog-list.html" />
+        <Content Include="dist\src\html-master\html-page\dark-blog-single.html" />
+        <Content Include="dist\src\html-master\html-page\dark-index.html" />
+        <Content Include="dist\src\html-master\html-page\dark-slide-index.html" />
+        <Content Include="dist\src\html-master\html-page\dark-video-index.html" />
+        <Content Include="dist\src\html-master\html-page\documentation\index.html" />
+        <Content Include="dist\src\html-master\html-page\index.html" />
+        <Content Include="dist\src\html-master\html-page\light-blog-list.html" />
+        <Content Include="dist\src\html-master\html-page\light-blog-single.html" />
+        <Content Include="dist\src\html-master\html-page\light-index.html" />
+        <Content Include="dist\src\html-master\html-page\light-slide-index.html" />
+        <Content Include="dist\src\html-master\html-page\light-video-index.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-01.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-02.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-03.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-04.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-05.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-06.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-07.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-08.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-09.html" />
+        <Content Include="dist\src\html-master\html-page\project\project-details-10.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\code_contact.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\code_css.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\code_structure.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\contact.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\credit.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\css.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\js.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\start.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\structure.html" />
+        <Content Include="dist\src\html-master\html-partial\doc\thank.html" />
+        <Content Include="dist\src\html-master\html-partial\page_blog_list.html" />
+        <Content Include="dist\src\html-master\html-partial\page_blog_single.html" />
+        <Content Include="dist\src\html-master\html-partial\page_doc.html" />
+        <Content Include="dist\src\html-master\html-partial\page_index.html" />
+        <Content Include="dist\src\html-master\html-partial\page_landing.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\img_url.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\main_footer.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\main_menu.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\page_loader.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\section_about.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\section_blog.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\section_contact.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\section_home.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\section_portfolio.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\section_resume.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\section_slide_home.html" />
+        <Content Include="dist\src\html-master\html-partial\sections\section_video_home.html" />
+        <Content Include="dist\src\html-master\html-partial\_head.html" />
+        <Content Include="dist\src\html-master\html-partial\_head_doc.html" />
+        <Content Include="dist\src\html-master\html-partial\_js.html" />
+        <Content Include="dist\src\html-master\html-partial\_js_doc.html" />
+        <Content Include="dist\src\html-master\html-partial\_layout.html" />
+        <Content Include="dist\src\html-master\html-partial\_layout_doc.html" />
+        <Content Include="dist\src\html-master\html-partial\_layout_landing.html" />
+        <Content Include="dist\src\html-master\html-partial\_layout_work.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\blog_comments.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\blog_content.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\blog_form_comment.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\blog_item.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\blog_sidebar.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\client_item.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\img_preview_item.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\resume_circle_item.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\resume_item.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\resume_line_item.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\testi_item.html" />
+        <Content Include="dist\src\html-master\html-partial\_part\work_item.html" />
+        <Content Include="dist\src\img\bg\01.jpg" />
+        <Content Include="dist\src\img\bg\02.jpg" />
+        <Content Include="dist\src\img\bg\03.jpg" />
+        <Content Include="dist\src\img\bg\04.jpg" />
+        <Content Include="dist\src\img\bg\bg2.jpg" />
+        <Content Include="dist\src\img\bg\wave1.svg" />
+        <Content Include="dist\src\img\bg\wave2.svg" />
+        <Content Include="dist\src\img\bg\wave3.svg" />
+        <Content Include="dist\src\img\bg\world.svg" />
+        <Content Include="dist\src\img\blog\01.jpg" />
+        <Content Include="dist\src\img\blog\02.jpg" />
+        <Content Include="dist\src\img\blog\03.jpg" />
+        <Content Include="dist\src\img\blog\04.jpg" />
+        <Content Include="dist\src\img\blog\05.jpg" />
+        <Content Include="dist\src\img\client\01.png" />
+        <Content Include="dist\src\img\client\02.png" />
+        <Content Include="dist\src\img\client\03.png" />
+        <Content Include="dist\src\img\client\04.png" />
+        <Content Include="dist\src\img\client\05.png" />
+        <Content Include="dist\src\img\client\06.png" />
+        <Content Include="dist\src\img\doc\author.png" />
+        <Content Include="dist\src\img\doc\star5.png" />
+        <Content Include="dist\src\img\empty.png" />
+        <Content Include="dist\src\img\favicon.png" />
+        <Content Include="dist\src\img\people\01.jpg" />
+        <Content Include="dist\src\img\people\02.jpg" />
+        <Content Include="dist\src\img\people\03.jpg" />
+        <Content Include="dist\src\img\people\04.jpg" />
+        <Content Include="dist\src\img\people\05.jpg" />
+        <Content Include="dist\src\img\profile.jpg" />
+        <Content Include="dist\src\img\profile2.jpg" />
+        <Content Include="dist\src\img\sc\01.png" />
+        <Content Include="dist\src\img\sc\02.png" />
+        <Content Include="dist\src\img\sc\03.jpg" />
+        <Content Include="dist\src\img\sc\04.jpg" />
+        <Content Include="dist\src\img\sc\05.jpg" />
+        <Content Include="dist\src\img\sc\06.jpg" />
+        <Content Include="dist\src\img\work\01.jpg" />
+        <Content Include="dist\src\img\work\02.jpg" />
+        <Content Include="dist\src\img\work\03.jpg" />
+        <Content Include="dist\src\img\work\04.jpg" />
+        <Content Include="dist\src\img\work\05.jpg" />
+        <Content Include="dist\src\img\work\06.jpg" />
+        <Content Include="dist\src\img\work\07.jpg" />
+        <Content Include="dist\src\img\work\08.jpg" />
+        <Content Include="dist\src\img\work\09.jpg" />
+        <Content Include="dist\src\img\work\10.jpg" />
+        <Content Include="dist\src\img\x1.png" />
+        <Content Include="dist\src\php\sendmail.php" />
+        <Content Include="dist\src\video\video1.mp4" />
+        <Content Include="favicon.ico"/>
+        <Content Include="fonts\glyphicons-halflings-regular.svg"/>
+        <Content Include="Global.asax"/>
+        <Content Include="Content\Site.css"/>
+        <Content Include="Scripts\bootstrap.js"/>
+        <Content Include="Scripts\bootstrap.min.js"/>
+        <Content Include="Views\Home\Login.cshtml" />
+        <Content Include="Views\Shared\src\.DS_Store" />
+        <Content Include="Views\Shared\src\app\css\app.css" />
+        <Content Include="Views\Shared\src\app\css\app.min.css">
+          <DependentUpon>app.css</DependentUpon>
+        </Content>
+        <Content Include="Views\Shared\src\app\css\doc.css" />
+        <Content Include="Views\Shared\src\app\css\doc.min.css">
+          <DependentUpon>doc.css</DependentUpon>
+        </Content>
+        <Content Include="Views\Shared\src\app\css\uikit-custom.css" />
+        <Content Include="Views\Shared\src\app\css\uikit-custom.min.css" />
+        <Content Include="Views\Shared\src\app\js\app.js" />
+        <Content Include="Views\Shared\src\app\js\plugins.min.js" />
+        <Content Include="Views\Shared\src\app\scss\app.scss" />
+        <Content Include="Views\Shared\src\app\scss\doc.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_body.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_component.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_landing.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_main_content.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_main_footer.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_main_menu.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_page_loader.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_section_about.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_section_blog.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_section_contact.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_section_home.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_section_portfolio.scss" />
+        <Content Include="Views\Shared\src\app\scss\src\_section_resume.scss" />
+        <Content Include="Views\Shared\src\app\scss\uikit-custom.scss" />
+        <Content Include="Views\Shared\src\app\scss\_vars.scss" />
+        <Content Include="Views\Shared\src\html-master\.DS_Store" />
+        <Content Include="Views\Shared\src\html-master\html-page\dark-blog-list.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\dark-blog-single.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\dark-index.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\dark-slide-index.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\dark-video-index.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\documentation\index.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\index.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\light-blog-list.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\light-blog-single.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\light-index.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\light-slide-index.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\light-video-index.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-01.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-02.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-03.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-04.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-05.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-06.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-07.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-08.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-09.html" />
+        <Content Include="Views\Shared\src\html-master\html-page\project\project-details-10.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\code_contact.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\code_css.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\code_structure.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\contact.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\credit.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\css.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\js.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\start.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\structure.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\doc\thank.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\page_blog_list.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\page_blog_single.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\page_doc.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\page_index.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\page_landing.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\img_url.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\main_footer.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\main_menu.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\page_loader.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\section_about.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\section_blog.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\section_contact.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\section_home.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\section_portfolio.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\section_resume.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\section_slide_home.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\sections\section_video_home.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_head.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_head_doc.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_js.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_js_doc.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_layout.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_layout_doc.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_layout_landing.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_layout_work.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\blog_comments.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\blog_content.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\blog_form_comment.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\blog_item.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\blog_sidebar.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\client_item.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\img_preview_item.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\resume_circle_item.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\resume_item.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\resume_line_item.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\testi_item.html" />
+        <Content Include="Views\Shared\src\html-master\html-partial\_part\work_item.html" />
+        <Content Include="Views\Shared\src\img\bg\01.jpg" />
+        <Content Include="Views\Shared\src\img\bg\02.jpg" />
+        <Content Include="Views\Shared\src\img\bg\03.jpg" />
+        <Content Include="Views\Shared\src\img\bg\04.jpg" />
+        <Content Include="Views\Shared\src\img\bg\bg2.jpg" />
+        <Content Include="Views\Shared\src\img\bg\wave1.svg" />
+        <Content Include="Views\Shared\src\img\bg\wave2.svg" />
+        <Content Include="Views\Shared\src\img\bg\wave3.svg" />
+        <Content Include="Views\Shared\src\img\bg\world.svg" />
+        <Content Include="Views\Shared\src\img\blog\01.jpg" />
+        <Content Include="Views\Shared\src\img\blog\02.jpg" />
+        <Content Include="Views\Shared\src\img\blog\03.jpg" />
+        <Content Include="Views\Shared\src\img\blog\04.jpg" />
+        <Content Include="Views\Shared\src\img\blog\05.jpg" />
+        <Content Include="Views\Shared\src\img\client\01.png" />
+        <Content Include="Views\Shared\src\img\client\02.png" />
+        <Content Include="Views\Shared\src\img\client\03.png" />
+        <Content Include="Views\Shared\src\img\client\04.png" />
+        <Content Include="Views\Shared\src\img\client\05.png" />
+        <Content Include="Views\Shared\src\img\client\06.png" />
+        <Content Include="Views\Shared\src\img\doc\author.png" />
+        <Content Include="Views\Shared\src\img\doc\star5.png" />
+        <Content Include="Views\Shared\src\img\empty.png" />
+        <Content Include="Views\Shared\src\img\favicon.png" />
+        <Content Include="Views\Shared\src\img\people\01.jpg" />
+        <Content Include="Views\Shared\src\img\people\02.jpg" />
+        <Content Include="Views\Shared\src\img\people\03.jpg" />
+        <Content Include="Views\Shared\src\img\people\04.jpg" />
+        <Content Include="Views\Shared\src\img\people\05.jpg" />
+        <Content Include="Views\Shared\src\img\profile.jpg" />
+        <Content Include="Views\Shared\src\img\profile2.jpg" />
+        <Content Include="Views\Shared\src\img\sc\01.png" />
+        <Content Include="Views\Shared\src\img\sc\02.png" />
+        <Content Include="Views\Shared\src\img\sc\03.jpg" />
+        <Content Include="Views\Shared\src\img\sc\04.jpg" />
+        <Content Include="Views\Shared\src\img\sc\05.jpg" />
+        <Content Include="Views\Shared\src\img\sc\06.jpg" />
+        <Content Include="Views\Shared\src\img\work\01.jpg" />
+        <Content Include="Views\Shared\src\img\work\02.jpg" />
+        <Content Include="Views\Shared\src\img\work\03.jpg" />
+        <Content Include="Views\Shared\src\img\work\04.jpg" />
+        <Content Include="Views\Shared\src\img\work\05.jpg" />
+        <Content Include="Views\Shared\src\img\work\06.jpg" />
+        <Content Include="Views\Shared\src\img\work\07.jpg" />
+        <Content Include="Views\Shared\src\img\work\08.jpg" />
+        <Content Include="Views\Shared\src\img\work\09.jpg" />
+        <Content Include="Views\Shared\src\img\work\10.jpg" />
+        <Content Include="Views\Shared\src\img\x1.png" />
+        <Content Include="Views\Shared\src\php\sendmail.php" />
+        <Content Include="Views\Shared\src\video\video1.mp4" />
+        <Content Include="wwwroot\src\.DS_Store" />
+        <Content Include="wwwroot\src\app\css\app.css" />
+        <Content Include="wwwroot\src\app\css\app.min.css">
+          <DependentUpon>app.css</DependentUpon>
+        </Content>
+        <Content Include="wwwroot\src\app\css\doc.css" />
+        <Content Include="wwwroot\src\app\css\doc.min.css">
+          <DependentUpon>doc.css</DependentUpon>
+        </Content>
+        <Content Include="wwwroot\src\app\css\uikit-custom.css" />
+        <Content Include="wwwroot\src\app\css\uikit-custom.min.css" />
+        <Content Include="wwwroot\src\app\js\app.js" />
+        <Content Include="wwwroot\src\app\js\plugins.min.js" />
+        <Content Include="wwwroot\src\app\scss\app.scss" />
+        <Content Include="wwwroot\src\app\scss\doc.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_body.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_component.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_landing.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_main_content.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_main_footer.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_main_menu.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_page_loader.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_section_about.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_section_blog.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_section_contact.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_section_home.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_section_portfolio.scss" />
+        <Content Include="wwwroot\src\app\scss\src\_section_resume.scss" />
+        <Content Include="wwwroot\src\app\scss\uikit-custom.scss" />
+        <Content Include="wwwroot\src\app\scss\_vars.scss" />
+        <Content Include="wwwroot\src\html-master\.DS_Store" />
+        <Content Include="wwwroot\src\html-master\html-page\dark-blog-list.html" />
+        <Content Include="wwwroot\src\html-master\html-page\dark-blog-single.html" />
+        <Content Include="wwwroot\src\html-master\html-page\dark-index.html" />
+        <Content Include="wwwroot\src\html-master\html-page\dark-slide-index.html" />
+        <Content Include="wwwroot\src\html-master\html-page\dark-video-index.html" />
+        <Content Include="wwwroot\src\html-master\html-page\documentation\index.html" />
+        <Content Include="wwwroot\src\html-master\html-page\index.html" />
+        <Content Include="wwwroot\src\html-master\html-page\light-blog-list.html" />
+        <Content Include="wwwroot\src\html-master\html-page\light-blog-single.html" />
+        <Content Include="wwwroot\src\html-master\html-page\light-index.html" />
+        <Content Include="wwwroot\src\html-master\html-page\light-slide-index.html" />
+        <Content Include="wwwroot\src\html-master\html-page\light-video-index.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-01.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-02.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-03.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-04.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-05.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-06.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-07.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-08.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-09.html" />
+        <Content Include="wwwroot\src\html-master\html-page\project\project-details-10.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\code_contact.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\code_css.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\code_structure.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\contact.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\credit.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\css.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\js.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\start.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\structure.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\doc\thank.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\page_blog_list.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\page_blog_single.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\page_doc.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\page_index.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\page_landing.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\img_url.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\main_footer.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\main_menu.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\page_loader.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\section_about.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\section_blog.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\section_contact.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\section_home.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\section_portfolio.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\section_resume.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\section_slide_home.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\sections\section_video_home.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_head.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_head_doc.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_js.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_js_doc.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_layout.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_layout_doc.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_layout_landing.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_layout_work.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\blog_comments.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\blog_content.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\blog_form_comment.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\blog_item.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\blog_sidebar.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\client_item.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\img_preview_item.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\resume_circle_item.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\resume_item.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\resume_line_item.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\testi_item.html" />
+        <Content Include="wwwroot\src\html-master\html-partial\_part\work_item.html" />
+        <Content Include="wwwroot\src\img\bg\01.jpg" />
+        <Content Include="wwwroot\src\img\bg\02.jpg" />
+        <Content Include="wwwroot\src\img\bg\03.jpg" />
+        <Content Include="wwwroot\src\img\bg\04.jpg" />
+        <Content Include="wwwroot\src\img\bg\bg2.jpg" />
+        <Content Include="wwwroot\src\img\bg\wave1.svg" />
+        <Content Include="wwwroot\src\img\bg\wave2.svg" />
+        <Content Include="wwwroot\src\img\bg\wave3.svg" />
+        <Content Include="wwwroot\src\img\bg\world.svg" />
+        <Content Include="wwwroot\src\img\blog\01.jpg" />
+        <Content Include="wwwroot\src\img\blog\02.jpg" />
+        <Content Include="wwwroot\src\img\blog\03.jpg" />
+        <Content Include="wwwroot\src\img\blog\04.jpg" />
+        <Content Include="wwwroot\src\img\blog\05.jpg" />
+        <Content Include="wwwroot\src\img\client\01.png" />
+        <Content Include="wwwroot\src\img\client\02.png" />
+        <Content Include="wwwroot\src\img\client\03.png" />
+        <Content Include="wwwroot\src\img\client\04.png" />
+        <Content Include="wwwroot\src\img\client\05.png" />
+        <Content Include="wwwroot\src\img\client\06.png" />
+        <Content Include="wwwroot\src\img\doc\author.png" />
+        <Content Include="wwwroot\src\img\doc\star5.png" />
+        <Content Include="wwwroot\src\img\empty.png" />
+        <Content Include="wwwroot\src\img\favicon.png" />
+        <Content Include="wwwroot\src\img\people\01.jpg" />
+        <Content Include="wwwroot\src\img\people\02.jpg" />
+        <Content Include="wwwroot\src\img\people\03.jpg" />
+        <Content Include="wwwroot\src\img\people\04.jpg" />
+        <Content Include="wwwroot\src\img\people\05.jpg" />
+        <Content Include="wwwroot\src\img\profile.jpg" />
+        <Content Include="wwwroot\src\img\profile2.jpg" />
+        <Content Include="wwwroot\src\img\sc\01.png" />
+        <Content Include="wwwroot\src\img\sc\02.png" />
+        <Content Include="wwwroot\src\img\sc\03.jpg" />
+        <Content Include="wwwroot\src\img\sc\04.jpg" />
+        <Content Include="wwwroot\src\img\sc\05.jpg" />
+        <Content Include="wwwroot\src\img\sc\06.jpg" />
+        <Content Include="wwwroot\src\img\work\01.jpg" />
+        <Content Include="wwwroot\src\img\work\02.jpg" />
+        <Content Include="wwwroot\src\img\work\03.jpg" />
+        <Content Include="wwwroot\src\img\work\04.jpg" />
+        <Content Include="wwwroot\src\img\work\05.jpg" />
+        <Content Include="wwwroot\src\img\work\06.jpg" />
+        <Content Include="wwwroot\src\img\work\07.jpg" />
+        <Content Include="wwwroot\src\img\work\08.jpg" />
+        <Content Include="wwwroot\src\img\work\09.jpg" />
+        <Content Include="wwwroot\src\img\work\10.jpg" />
+        <Content Include="wwwroot\src\img\x1.png" />
+        <Content Include="wwwroot\src\php\sendmail.php" />
+        <Content Include="wwwroot\src\video\video1.mp4" />
+        <None Include="Scripts\jquery-3.3.1.intellisense.js"/>
+        <Content Include="Scripts\jquery-3.3.1.js"/>
+        <Content Include="Scripts\jquery-3.3.1.min.js"/>
+        <Content Include="Scripts\jquery-3.3.1.slim.js"/>
+        <Content Include="Scripts\jquery-3.3.1.slim.min.js"/>
+        <None Include="Scripts\jquery.validate-vsdoc.js"/>
+        <Content Include="Scripts\jquery.validate.js"/>
+        <Content Include="Scripts\jquery.validate.min.js"/>
+        <Content Include="Scripts\jquery.validate.unobtrusive.js"/>
+        <Content Include="Scripts\jquery.validate.unobtrusive.min.js"/>
+        <Content Include="Scripts\modernizr-2.8.3.js"/>
+        <Content Include="Views\Shared\_Layouts.cshtml" />
+        <Content Include="Web.config"/>
+        <Content Include="Web.Debug.config">
+            <DependentUpon>Web.config</DependentUpon>
+        </Content>
+        <Content Include="Web.Release.config">
+            <DependentUpon>Web.config</DependentUpon>
+        </Content>
+        <Content Include="Views\Web.config"/>
+        <Content Include="Views\_ViewStart.cshtml"/>
+        <Content Include="Views\Shared\Error.cshtml"/>
+        <Content Include="Views\Shared\_Layout.cshtml"/>
+        <Content Include="Views\Home\About.cshtml"/>
+        <Content Include="Views\Home\Contact.cshtml"/>
+        <Content Include="Views\Home\Index.cshtml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="App_Data"/>
+        <Folder Include="Models"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="fonts\glyphicons-halflings-regular.woff2"/>
+        <Content Include="fonts\glyphicons-halflings-regular.woff"/>
+        <Content Include="fonts\glyphicons-halflings-regular.ttf"/>
+        <Content Include="fonts\glyphicons-halflings-regular.eot"/>
+        <Content Include="Content\bootstrap.min.css.map"/>
+        <Content Include="Content\bootstrap.css.map"/>
+        <Content Include="Content\bootstrap-theme.min.css.map"/>
+        <Content Include="Content\bootstrap-theme.css.map"/>
+        <None Include="packages.config"/>
+        <Content Include="Scripts\jquery-3.3.1.slim.min.map"/>
+        <Content Include="Scripts\jquery-3.3.1.min.map"/>
+    </ItemGroup>
+    <PropertyGroup>
+        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    </PropertyGroup>
+    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets"/>
+    <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''"/>
+    <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+        <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)"/>
+    </Target>
+    <ProjectExtensions>
+        <VisualStudio>
+            <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+                <WebProjectProperties>
+                    <UseIIS>True</UseIIS>
+                    <AutoAssignPort>True</AutoAssignPort>
+                    <DevelopmentServerPort>5000</DevelopmentServerPort>
+                    <DevelopmentServerVPath>/</DevelopmentServerVPath>
+                    <IISUrl>http://localhost:5000/</IISUrl>
+                    <NTLMAuthentication>False</NTLMAuthentication>
+                    <UseCustomServer>False</UseCustomServer>
+                    <CustomServerUrl/>
+                    <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+                </WebProjectProperties>
+            </FlavorProperties>
+        </VisualStudio>
+    </ProjectExtensions>
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+        <PropertyGroup>
+            <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+        </PropertyGroup>
+        <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))"/>
+    </Target>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target> -->
+</Project>
