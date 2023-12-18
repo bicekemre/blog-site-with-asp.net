@@ -8,6 +8,15 @@ namespace blog.Controllers
 {
     public class LoginController : Controller
     {
-        public 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Signup()
+        {
+            return View();
+        }
+            
     }
 }
