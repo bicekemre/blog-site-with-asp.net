@@ -26,31 +26,30 @@
             <span class="typed-cursor typed-cursor--blink">|</span>
           </div>
           <div>
-            <div>
-              <div class="uk-margin">
-                <div class="uk-form-controls uk-inline uk-width-1-1">
-                  <span class="uk-form-icon" data-uk-icon="icon: user"></span>
-                  <input class="yb-input uk-input  uk-border-rounded" type="email" name="f_email" id="f_email" placeholder="Email" />
-                </div>
-                <small class="uk-text-danger err-msg" id="f_email_error"></small>
-              </div>
-            </div>
-            <div>
-              <div class="uk-margin">
-                <div class="uk-form-controls uk-inline uk-width-1-1">
-                  <span class="uk-form-icon" data-uk-icon="icon: user"></span>
-                  <input class="yb-input uk-input  uk-border-rounded" type="password" name="f_email" id="f_email" placeholder="Password" />
-                </div>
-                <small class="uk-text-danger err-msg" id="f_email_error"></small>
-                Do not have an account <a href="@Html.ActionLink("Signup" , "Signup", "Login")"> Sign Up</a>
-              </div>
-            </div>
-               <div class="uk-margin-top">
-                <button class="uk-button uk-button-primary uk-button-large  yb-btn" type="submit" id="btn-contact-form" data-textreset="Send Now">
-                  <span class="uk-margin-small-right btn-text-wrap">Log in</span>
-                  <span data-uk-icon="arrow-right" class="uk-icon"> </span>
-                </button>
-              </div>
+      <form id="login-form">
+        <div class="uk-margin">
+          <div class="uk-form-controls uk-inline uk-width-1-1">
+            <span class="uk-form-icon" data-uk-icon="icon: user"></span>
+            <input class="yb-input uk-input  uk-border-rounded" type="email" name="f_email" id="f_email" placeholder="Email" />
+          </div>
+          <small class="uk-text-danger err-msg" id="f_email_error"></small>
+        </div>
+        <div class="uk-margin">
+          <div class="uk-form-controls uk-inline uk-width-1-1">
+            <span class="uk-form-icon" data-uk-icon="icon: user"></span>
+            <input class="yb-input uk-input  uk-border-rounded" type="password" name="f_password" id="f_password" placeholder="Password" />
+          </div>
+          <small class="uk-text-danger err-msg" id="f_password_error"></small>
+          Do not have an account @Html.ActionLink("Signup" , "Signup", "Login")
+        </div>
+        <div class="uk-margin-top">
+          <button class="uk-button uk-button-primary uk-button-large yb-btn" type="submit" id="btn-contact-form" data-textreset="Send Now">
+            <span class="uk-margin-small-right btn-text-wrap">Log in</span>
+            <span data-uk-icon="arrow-right" class="uk-icon"> </span>
+          </button>
+        </div>
+      </form>
+
           </div>
         </div>
       </section>
@@ -60,3 +59,30 @@
 
     <!-- main menu -->
   </header><!-- end main header -->
+  <script>
+    $(document).ready(function() {
+      $('#login-form').submit(function(event) {
+        event.preventDefault(); 
+        
+        var email = $('#f_email').val();
+        var password = $('#f_password').val();
+        
+        $.ajax({
+          type: 'POST',
+          url: 'sunucu_adresi/login', 
+          data: {
+            email: email,
+            password: password
+          },
+          success: function(response) {
+            console.log('Giriş başarılı: ' + response);
+            window.location.href = 'dashboard.html';
+          },
+          error: function(error) {
+            console.error('Giriş başarısız: ' + error);
+          }
+        });
+      });
+    });
+
+  </script>
